@@ -36,10 +36,14 @@ body {position: relative;}
 
 
 /*configure*/
-#configure .square-buttons button {@apply w-[50px] xl:w-[60px] aspect-square ring-1 xl:ring-2 ring-black bg-dark-gray }
-#configure .rounded-buttons button {@apply w-[32px] xl:w-[38px] aspect-square rounded-full ring-1 xl:ring-2 ring-black bg-dark-gray }
+#configure .square-buttons button {@apply w-[50px] xl:w-[60px] aspect-square ring-1 xl:ring-2 ring-black  }
+#configure .rounded-buttons button {@apply w-[32px] xl:w-[38px] aspect-square rounded-full ring-1 xl:ring-2 ring-black }
 #configure h1 {@apply text-3xl }
 #configure h2 {@apply text-xl  }
 #configure h3 {@apply text-sm lg:text-base }
 
 #configure #price p {@apply bg-dark-gray px-2 py-1 rounded-sm}
+
+/*admin*/
+#orders #orders-table thead tr th {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-3}
+#orders #orders-table tbody tr th,td {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-2 }

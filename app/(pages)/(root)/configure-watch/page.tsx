@@ -5,11 +5,14 @@ import Image from "next/image";
 import PriceBox from "@/components/configurator/PriceBox";
 import WatchConfigureImage from "@/components/configurator/WatchConfigureImage";
 import InStock from "@/components/configurator/InStock";
-import { watchCase } from "@/constants";
+import { bracelet, dial, hands, movement, watchCase } from "@/constants";
 
 const Page = () => {
   const [openPreview, setOpenPreview] = useState(false);
-
+  const [configureVariant, setConfigureVariant] = useState({});
+  useEffect(() => {
+    console.log(configureVariant);
+  }, [configureVariant]);
   return (
     <section
       id="configure"
@@ -38,34 +41,53 @@ const Page = () => {
           {/*pouzdro a řemínek*/}
           <div className="flex max-lg:flex-col w-full items-center justify-between gap-3 sm:w-1/2 sm:pl-[10px] md:w-full md:pl-0 lg:max-w-[550px] xl:max-w-[750px] lg:mx-auto">
             {/*pouzdro*/}
-            {watchCase.map((item) => (
-              <ChooseBox mainTitle="Pouzdro" options={1} square cols={3} />
+            {watchCase.map((item, index) => (
+              <ChooseBox
+                item={item}
+                key={index}
+                setConfigureVariant={setConfigureVariant}
+                configureVariant={configureVariant}
+              />
             ))}
 
             {/*řemínek*/}
-            <ChooseBox mainTitle="Řemínek" options={1} square cols={3} />
+            {bracelet.map((item, index) => (
+              <ChooseBox
+                item={item}
+                key={index}
+                setConfigureVariant={setConfigureVariant}
+                configureVariant={configureVariant}
+              />
+            ))}
           </div>
           {/*ciferník + ručičky + strojek*/}
           <div className="flex flex-col w-full items-center gap-3  sm:grid sm:items-start sm:pl-[10px] md:flex lg:grid lg:grid-cols-2 lg:gap-y-5 lg:max-w-[550px] xl:max-w-[750px] lg:mx-auto xl:grid-cols-3">
             {/*ciferník*/}
-            <ChooseBox
-              mainTitle="Ciferník"
-              options={2}
-              firstSecTitle="Jednobarevné"
-              secondSecTitle="Se Vzorem"
-              cols={3}
-              additionalStyle="max-md:col-start-2"
-              rounded
-            />
-            <ChooseBox
-              mainTitle="Ručičky"
-              options={2}
-              firstSecTitle="Typ 1"
-              secondSecTitle="Typ 2"
-              cols={3}
-              rounded
-            />
-            <ChooseBox mainTitle="Strojek" options={1} cols={3} rounded />
+            {dial.map((item, index) => (
+              <ChooseBox
+                additionalStyle="max-md:col-start-2"
+                item={item}
+                key={index}
+                setConfigureVariant={setConfigureVariant}
+                configureVariant={configureVariant}
+              />
+            ))}{" "}
+            {hands.map((item, index) => (
+              <ChooseBox
+                item={item}
+                key={index}
+                setConfigureVariant={setConfigureVariant}
+                configureVariant={configureVariant}
+              />
+            ))}{" "}
+            {movement.map((item, index) => (
+              <ChooseBox
+                item={item}
+                key={index}
+                setConfigureVariant={setConfigureVariant}
+                configureVariant={configureVariant}
+              />
+            ))}
           </div>
           {/*cena a měna*/}
           <div className="w-full flex items-center sm:hidden">

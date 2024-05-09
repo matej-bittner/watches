@@ -1,6 +1,79 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
 
 *{margin: 0;padding: 0;}
 
@@ -11,19 +84,19 @@ body {position: relative;}
 #homepage h3{@apply text-lg}
 
 #navbar{
-    @media (min-width: 768px){ background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.36) 15%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.36) 85%, rgba(0,212,255,0) 100%);}
-    @media (min-width: 1280px) {background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.36) 25%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.36) 75%, rgba(0,212,255,0) 100%);}
+  @media (min-width: 768px){ background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.36) 15%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.36) 85%, rgba(0,212,255,0) 100%);}
+  @media (min-width: 1280px) {background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.36) 25%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.36) 75%, rgba(0,212,255,0) 100%);}
 }
 
 #about-overlay{
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 52%, rgba(0,0,0,0.9) 74%, rgba(0,0,0,1) 100%);
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 52%, rgba(0,0,0,0.9) 74%, rgba(0,0,0,1) 100%);
 }
 
 #process .process-box{
-    @apply bg-main-brown  max-w-[450px] lg:max-w-[420px] min-h-[250px] sm:h-[280px] lg:even:h-[320px] rounded-md relative flex flex-col items-center  pt-[40px] text-center
+  @apply bg-main-brown  max-w-[450px] lg:max-w-[420px] min-h-[250px] sm:h-[280px] lg:even:h-[320px] rounded-md relative flex flex-col items-center  pt-[40px] text-center
 }
 
 #process .process-box .number{
@@ -45,5 +118,13 @@ body {position: relative;}
 #configure #price p {@apply bg-dark-gray px-2 py-1 rounded-sm}
 
 /*admin*/
-#orders #orders-table thead tr th {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-3}
-#orders #orders-table tbody tr th,td {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-2 }
+/*#orders #orders-table thead tr th {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-3}*/
+/*#orders #orders-table tbody tr th,td {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-2 }*/
+
+/*order id*/
+#order-id input {@apply  outline-none border-[1px] border-black rounded-md px-2 py-1 bg-gray-50}
+#personal-info .error-div {@apply w-fit flex flex-col }
+#personal-info .error-div span {@apply text-red-600 font-medium}
+
+/*create product*/
+#choose-create a {@apply bg-blue-400 rounded-lg px-2 py-1 text-white}

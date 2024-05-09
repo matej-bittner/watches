@@ -21,29 +21,61 @@ model Admin {
   email    String @unique
 }
 
-model Configuration {
-  id         String    @id @default(uuid())
+model Parts {
+  id         String  @id @default(uuid())
   part       String
   czechTitle String?
-  variants   Variant[]
+
+  collection Collection[]
+  variant    Variant[]
+}
+
+model Collection {
+  id         String    @id @default(uuid())
+  title      String
+  czechTitle String?
+  Parts      Parts?    @relation(fields: [partsId], references: [id])
+  partsId    String?
+  variant    Variant[]
 }
 
 model Variant {
-  id              String        @id @default(uuid())
-  title           String?
-  czechTitle      String?
-  Configuration   Configuration @relation(fields: [configurationId], references: [id])
-  configurationId String
-  options         Options[]
+  id           String      @id @default(uuid())
+  price        String
+  stock        Int
+  material     String?
+  type         String?
+  color        String?
+  Parts        Parts?      @relation(fields: [partsId], references: [id])
+  partsId      String?
+  Collection   Collection? @relation(fields: [collectionId], references: [id])
+  collectionId String?
 }
 
-model Options {
-  id        String   @id @default(uuid())
-  price     String
-  stock     Int
-  material  String?
-  type      String?
-  color     String?
-  Variant   Variant? @relation(fields: [variantId], references: [id])
-  variantId String?
+model Order {
+  id           String         @id @default(uuid())
+  createdAt    DateTime       @default(now())
+  price        Int
+  name         String
+  surname      String
+  phoneNumber  Int
+  email        String
+  city         String
+  zipCode      Int
+  street       String?
+  houseNumber  String
+  note         String?
+  status       String
+  orderedParts OrderedParts[]
+}
+
+model OrderedParts {
+  id         String  @id @default(uuid())
+  caseId     String
+  dialId     String
+  handsId    String
+  braceletId String
+  movementId String
+  Order      Order?  @relation(fields: [orderId], references: [id])
+  orderId    String?
 }

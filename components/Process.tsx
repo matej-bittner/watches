@@ -12,13 +12,6 @@ const Process = () => {
         <div className="process-box w-full sm:order-1">
           <>
             <div className="number">1</div>
-            {/*<Image*/}
-            {/*  src="/icons/small-process-arrow.svg"*/}
-            {/*  alt="arrow"*/}
-            {/*  width={50}*/}
-            {/*  height={108}*/}
-            {/*  className="absolute bottom-[-20%] left-4 z-10 sm:hidden"*/}
-            {/*/>*/}
             <RxDoubleArrowDown
               className="invert absolute bottom-[-15%] left-4 sm:hidden"
               size={60}
@@ -41,13 +34,6 @@ const Process = () => {
         <div className="process-box sm:order-3 lg:order-2  sm:col-span-2 lg:col-span-1 w-full sm:w-[50%] lg:w-full">
           <>
             <div className="number">2</div>
-            {/*<Image*/}
-            {/*  src="/icons/small-process-arrow.svg"*/}
-            {/*  alt="arrow"*/}
-            {/*  width={50}*/}
-            {/*  height={108}*/}
-            {/*  className="absolute bottom-[-20%] right-4 z-10 sm:hidden"*/}
-            {/*/>*/}
             <RxDoubleArrowDown
               className="invert absolute bottom-[-15%] left-4 sm:hidden"
               size={60}

@@ -2,18 +2,11 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AllOrdersType } from "@/typings";
 
-export type Order = {
-  id: number;
-  createdAt: string;
-  note: number;
-  price: number;
-  status: "odeslaná" | "ve zpracování" | "přijatá" | "stornovaná";
-};
-
-export const columns: ColumnDef<Order>[] = [
+export const columns: ColumnDef<AllOrdersType>[] = [
   {
     accessorKey: "id",
     header: "Objednávka",

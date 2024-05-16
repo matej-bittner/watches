@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const WatchSection = () => {
   return (
-    // <section className="relative mx-auto my-6 flex h-[320px] w-full max-w-[1400px] bg-opacity-20 bg-[url('/images/watch-section-bg.png')] bg-cover  bg-center bg-no-repeat text-white sm:mt-12 sm:h-[350px] sm:justify-end xl:mt-6 xl:h-[450px] xl:rounded-md">
     <section className="relative mx-auto flex h-[320px] w-full max-w-[1400px] bg-opacity-20 bg-[url('/images/watch-section-bg.png')] bg-cover  bg-center bg-no-repeat text-white sm:h-[350px] sm:justify-end xl:h-[450px] xl:rounded-md my-5 sm:mt-6 lg:my-0">
       <Image
         src="/images/watch-section-new.png"

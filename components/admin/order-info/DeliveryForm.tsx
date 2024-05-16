@@ -77,7 +77,7 @@ const DeliveryForm = ({ order }: any) => {
     <form
       id="personal-info"
       onSubmit={handleSubmit(onSubmit)}
-      className={`flex flex-col gap-2 w-fit mx-auto ${editable && "bg-red-300"}`}
+      className={`flex flex-col gap-2 w-fit mx-auto p-2 rounded-md ${editable && "bg-red-300/20"}`}
     >
       <div className="flex  justify-between items-center">
         <h3>Osobní údaje</h3>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+
 const AdminNavbar = () => {
   const [openNav, setOpenNav] = useState(false);
 
@@ -18,7 +18,7 @@ const AdminNavbar = () => {
   }, []);
 
   return (
-    <div className={`xl:border-r-2 border-black `}>
+    <div className="xl:border-r-2 border-black">
       <GiHamburgerMenu
         onClick={() => setOpenNav(!openNav)}
         size={40}
@@ -33,12 +33,11 @@ const AdminNavbar = () => {
         >
           <div className="flex flex-col gap-4 items-center ">
             <Link href="/admin/orders">Objednávky</Link>
-            <Link href="/">Produkty</Link>
+            <Link href="/admin/products">Produkty</Link>
             <Link href="/">Prodeje</Link>
           </div>
           <div className="flex flex-col gap-4 items-center">
             <Link href="/">Nastavení</Link>
-            <Link href="/">Odhlásit</Link>
           </div>
         </div>
       </div>

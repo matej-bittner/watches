@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import ChooseBox from "@/components/configurator/ChooseBox";
-import Image from "next/image";
 import PriceBox from "@/components/configurator/PriceBox";
 import WatchConfigureImage from "@/components/configurator/WatchConfigureImage";
 import InStock from "@/components/configurator/InStock";
@@ -71,7 +70,7 @@ const Page = () => {
                 setConfigureVariant={setConfigureVariant}
                 configureVariant={configureVariant}
               />
-            ))}{" "}
+            ))}
             {hands.map((item, index) => (
               <ChooseBox
                 item={item}

@@ -42,7 +42,7 @@ const EditButton: React.FC<EditButtonProps> = ({
       <button
         type="button"
         onClick={() => setOpenDialog(true)}
-        className="rounded-md px-2 py-1 bg-blue-100 hover:bg-blue-200 text-black"
+        className="admin-base-btn"
       >
         {editable ? "Uložit/Zrušit" : "Editovat"}
       </button>

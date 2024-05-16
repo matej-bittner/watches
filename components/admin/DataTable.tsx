@@ -31,7 +31,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function OrdersTable<TData, TValue>({
+export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
@@ -56,10 +56,10 @@ export function OrdersTable<TData, TValue>({
   });
 
   const pathname = usePathname();
-  const splitedPathname = pathname.split("/")[2];
+  const splitPathname = pathname.split("/")[2];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-full">
       <div className="rounded-md border ">
         {/*nevim podle čeho hledat*/}
         {/*<div className="flex items-center py-4">*/}
@@ -80,7 +80,7 @@ export function OrdersTable<TData, TValue>({
                   return (
                     <TableHead
                       key={header.id}
-                      className={`${splitedPathname === "orders" && "[&:nth-child(4)]:max-sm:hidden "} `}
+                      className={`${splitPathname === "orders" && "[&:nth-child(4)]:max-sm:hidden "} ${splitPathname === "products" && "[&:nth-child(4)]:max-sm:hidden "} `}
                     >
                       {header.isPlaceholder
                         ? null
@@ -104,7 +104,7 @@ export function OrdersTable<TData, TValue>({
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={`${splitedPathname === "orders" && " [&:nth-child(3)]:block [&:nth-child(3)]:max-h-[90px] [&:nth-child(3)]:max-w-[300px] [&:nth-child(3)]:overflow-auto [&:nth-child(4)]:max-sm:hidden first:overflow-auto"} `}
+                      className={`${splitPathname === "orders" && " [&:nth-child(3)]:block [&:nth-child(3)]:max-h-[90px] [&:nth-child(3)]:max-w-[300px] [&:nth-child(3)]:overflow-auto [&:nth-child(4)]:max-sm:hidden first:overflow-auto"} ${splitPathname === "products" && "[&:nth-child(4)]:max-sm:hidden "} `}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

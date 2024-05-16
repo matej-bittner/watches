@@ -9,11 +9,13 @@ const ChooseCreate = () => {
     >
       <h4>Vytvořit:</h4>
       <div className="flex gap-4 font-medium ">
-        <Link className="" href="/dial">
+        <Link className="" href="/admin/products/create?create=dial">
           Ciferník
         </Link>
-        <Link href="/case">Pouzdro</Link>
-        <Link href="/hands">Ciferník</Link>
+        <Link href="/admin/products/create?create=case">Pouzdro</Link>
+        <Link href="/admin/products/create?create=bracelet">Řemínek</Link>
+        <Link href="/admin/products/create?create=hands">Ručičky</Link>
+        <Link href="/admin/products/create?create=movement">Pohyb</Link>
       </div>
     </section>
   );

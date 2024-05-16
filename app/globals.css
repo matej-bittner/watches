@@ -118,13 +118,17 @@ body {position: relative;}
 #configure #price p {@apply bg-dark-gray px-2 py-1 rounded-sm}
 
 /*admin*/
-/*#orders #orders-table thead tr th {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-3}*/
-/*#orders #orders-table tbody tr th,td {@apply px-2 py-1 md:px-3 md:py-2 lg:px-6 lg:py-2 }*/
-
+.admin-base-btn {@apply rounded-md px-2 py-1 bg-blue-300 hover:bg-blue-200 text-black}
+.admin-base-input {@apply outline-none border-black border-[1px] rounded-md bg-gray-50 pl-2 py-[1px]}
 /*order id*/
-#order-id input {@apply  outline-none border-[1px] border-black rounded-md px-2 py-1 bg-gray-50}
+#order-id input {@apply admin-base-input }
 #personal-info .error-div {@apply w-fit flex flex-col }
 #personal-info .error-div span {@apply text-red-600 font-medium}
 
 /*create product*/
 #choose-create a {@apply bg-blue-400 rounded-lg px-2 py-1 text-white}
+
+#create-product input, #product-id input {@apply admin-base-input sm:max-md:max-w-[200px]}
+#create-product .input-name {@apply text-sm sm:text-base }
+
+/*#product-id input {@apply border-black border-[1px] rounded-md outline-none sm:max-md:max-w-[200px]}*/

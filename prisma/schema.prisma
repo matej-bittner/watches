@@ -22,34 +22,34 @@ model Admin {
 }
 
 model Parts {
-  id         String  @id @default(uuid())
+  id         String       @id @default(uuid())
   part       String
-  czechTitle String?
-
+  title      String       @unique
   collection Collection[]
   variant    Variant[]
 }
 
 model Collection {
-  id         String    @id @default(uuid())
-  title      String
-  czechTitle String?
-  Parts      Parts?    @relation(fields: [partsId], references: [id])
-  partsId    String?
-  variant    Variant[]
+  id      String    @id @default(uuid())
+  title   String
+  parts   Parts?    @relation(fields: [partsId], references: [id])
+  partsId String?
+  variant Variant[]
 }
 
 model Variant {
-  id           String      @id @default(uuid())
-  price        String
-  stock        Int
-  material     String?
-  type         String?
-  color        String?
-  Parts        Parts?      @relation(fields: [partsId], references: [id])
-  partsId      String?
-  Collection   Collection? @relation(fields: [collectionId], references: [id])
-  collectionId String?
+  id            String      @id @default(uuid())
+  price         Int
+  purchasePrice Int?
+  stock         Int
+  material      String?
+  type          String?
+  color         String?
+  hexColor      String?
+  parts         Parts?      @relation(fields: [partsId], references: [id])
+  partsId       String?
+  collection    Collection? @relation(fields: [collectionId], references: [id])
+  collectionId  String?
 }
 
 model Order {

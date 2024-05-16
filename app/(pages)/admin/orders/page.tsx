@@ -1,6 +1,6 @@
 import React from "react";
 
-import { OrdersTable } from "@/components/admin/OrdersTable";
+import { DataTable } from "@/components/admin/DataTable";
 import { columns } from "@/app/(pages)/admin/orders/columns";
 import { GetAllOrders } from "@/app/api/get/route";
 
@@ -16,7 +16,7 @@ const OrdersPage = async () => {
 
       <div className="w-full overflow-auto">
         {/*//@ts-ignore*/}
-        <OrdersTable columns={columns} data={orders} />
+        <DataTable columns={columns} data={orders} />
       </div>
     </section>
   );

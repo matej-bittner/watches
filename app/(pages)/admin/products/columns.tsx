@@ -1,17 +1,22 @@
 "use client";
-import { Payment } from "@/app/(pages)/admin/products/page";
+
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
+import { AllProductsType } from "@/typings";
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<AllProductsType>[] = [
   {
     accessorKey: "id",
     header: "Id",
   },
   {
-    accessorKey: "collection",
+    accessorKey: "parts.title",
+    header: "Součást",
+  },
+  {
+    accessorKey: "collection.title",
     header: "Kolekce",
   },
   {
@@ -52,9 +57,10 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "edit",
     header: () => <span className="sr-only">Edit</span>,
     cell: ({ row }) => {
+      const productId = row.original.id;
       return (
         <Link
-          href={`/admin/`}
+          href={`/admin/products/${productId}`}
           className="text-nowrap text-blue-500 font-medium"
         >
           Zobraz<span className="max-sm:hidden">it</span>

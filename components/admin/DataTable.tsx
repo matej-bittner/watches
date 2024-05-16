@@ -120,7 +120,7 @@ export function OrdersTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center "
                 >
-                  No results.
+                  Bez výsledků
                 </TableCell>
               </TableRow>
             )}
